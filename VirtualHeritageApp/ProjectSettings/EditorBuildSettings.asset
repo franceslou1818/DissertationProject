@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CargoModel.unity
+    guid: bf880c0bf1e5d40389127a119042f228
+  - enabled: 1
+    path: Assets/FrontDeckhouse.unity
+    guid: e79b8186fa36b4bffa38da3e01475b39
