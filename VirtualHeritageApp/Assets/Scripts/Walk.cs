@@ -15,14 +15,14 @@ public class Walk : MonoBehaviour {
 		_startingPosition = GvrControllerInput.TouchPosCentered;
 		_currentPosition = GvrControllerInput.TouchPosCentered;
 	}
-	
+
 	void Update () {
 
 
 		if (GvrControllerInput.IsTouching) {
 
 			if (!_startedTouch) {
-				
+
 				// Start our swiping motion
 				_startedTouch = true;
 				_startingPosition = GvrControllerInput.TouchPos;
@@ -32,32 +32,29 @@ public class Walk : MonoBehaviour {
 				// Tracks our position of where we're swiping
 				_currentPosition = GvrControllerInput.TouchPos;
 			}
-//			Vector2 delta = _currentPosition - _startingPosition;
 			DetectSwipe();
-			
+
 		}
 		else {
 			if (_startedTouch) {
 
 				// Let go of our touchpad, see if we made any swiping motions
 				_startedTouch = false;
-//				Vector2 delta = _currentPosition - _startingPosition;
-//				DetectSwipe(delta);
 			}
 
 		}
 
 	}
-		
+
 
 	private void DetectSwipe() {
 
 		transform.localEulerAngles = new Vector3
 			(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z); 
-		
+
 
 		Vector2 delta = _currentPosition - _startingPosition;
-			
+
 		float y = delta.y;
 		float x = delta.x;
 
@@ -65,23 +62,19 @@ public class Walk : MonoBehaviour {
 		if (y > 0 && Mathf.Abs (x) < SwipeThreshold) {
 			print ("Swiped down");
 			transform.position -= Camera.main.transform.forward * 10f * Time.deltaTime;
-//			GetComponent<Rigidbody>().MovePosition -= Camera.main.transform.forward * 10f * Time.deltaTime;
 
-			
 		} else if (y < 0 && Mathf.Abs (x) < SwipeThreshold) {
 			print ("Swiped up");
 			transform.position += Camera.main.transform.forward * 10f * Time.deltaTime;
 		} else if (x > 0 && Mathf.Abs (y) < SwipeThreshold) {
 			print ("Swiped right");
 			transform.Translate(Vector3.right * Time.deltaTime * 10f, Space.Self);
-//			transform.position += Camera.main.transform.right * 10f * Time.deltaTime;
 
 		} else if (x < 0 && Mathf.Abs (y) < SwipeThreshold) {
 			print ("Swiped left");
 			transform.Translate(Vector3.left * Time.deltaTime * 10f, Space.Self);
-//			transform.position -= Camera.main.transform.right * 10f * Time.deltaTime;
 		}
-		
+
 	}
 
 

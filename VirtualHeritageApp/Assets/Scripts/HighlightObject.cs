@@ -7,22 +7,31 @@ public class HighlightObject : MonoBehaviour {
 
 	private Renderer myRenderer;
 
-	public Material inactiveMaterial;
-	public Material gazedAtMaterial;
+	private Material nonHighlightedMaterial;
+	public Material highlightedMaterial;
 
 	void Start() {
+		nonHighlightedMaterial = GetComponent<Renderer> ().material;
 		myRenderer = GetComponent<Renderer>();
-		SetGazedAt(false);
+//		SetGazedAt(false);
 	}
 
-	public void SetGazedAt(bool gazedAt) {
+	public void StartHighlight() {
 
-		print ("highlight");
-		if (inactiveMaterial != null && gazedAtMaterial != null) {
-			myRenderer.material = gazedAt ? gazedAtMaterial : inactiveMaterial;
-			return;
-		}
+		print ("StartHighlight");
+//		if (inactiveMaterial != null && gazedAtMaterial != null) {
+//			myRenderer.material = gazedAt ? gazedAtMaterial : inactiveMaterial;
+//			return;
+//		}
+
+		myRenderer.material = highlightedMaterial;
 	}
+
+	public void StopHighlight() {
+		print ("StopHighlight");
+		myRenderer.material = nonHighlightedMaterial;
+	}
+
 
 
 }
