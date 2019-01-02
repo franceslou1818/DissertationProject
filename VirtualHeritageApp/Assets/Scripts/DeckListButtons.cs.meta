@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 95d5473e217d848e3b807aec09477894
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - canvasWeatherDeck: {instanceID: 0}
+  - canvasTweenDeck: {instanceID: 0}
+  - canvasCargoHold: {instanceID: 0}
+  - canvasLowerDeck: {instanceID: 0}
+  - btnWeatherDeck: {instanceID: 0}
+  - btnTweenDeck: {instanceID: 0}
+  - btnCargoHold: {instanceID: 0}
+  - btnLowerDeck: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
