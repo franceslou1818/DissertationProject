@@ -19,7 +19,7 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	GameObject thePlayer;
 	PlayerScript playerScript;
 
-	int counter =0;
+//	int counter =0;
 
 //	void Start () {
 	void Awake () {
@@ -86,6 +86,24 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 		} else {
 			setOnlyThisActiveOrNot(true);
 		}
+
+
+		foreach (GameObject[] objArr in playerScript.allButtons) {
+			DeckListButtons buttonScript = playerScript.btnWeatherDeckMap [0].GetComponent<DeckListButtons> ();
+
+			if (objArr.Length == 3 && this.gameObject.name.Equals (objArr [2].name)) {
+
+				PlayerPrefs.SetString ("selectBtnSelected", objArr [0].name);
+				buttonScript.SetObjsActive (objArr [0]);
+				buttonScript.swapImgToArrow (objArr [0]);
+				break;
+			} else { // no scene with the corresponding button clicked
+					buttonScript.SetObjsActive (playerScript.btnWeatherDeckMap [0]);
+					buttonScript.swapImgToArrow (playerScript.btnWeatherDeckMap [0]);
+
+			}
+		}
+
 
 	}
 

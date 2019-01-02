@@ -11,6 +11,10 @@ public class PlayerScript : MonoBehaviour {
 	public float[] default_MainDeckhouse_Position = new float[3]{ -3.62f, 2.13f, 0f };
 	public float[] default_OfficersDeckhouse_Position = new float[3]{ -8.17f, 1.34f, 7.56f };
 
+	public float[] default_WeatherDeck_Rotation = new float[3]{ 0f, 0f, 0f };
+	public float[] default_MainDeckhouse_Rotation = new float[3]{ 0f, 90f, 0f };
+	public float[] default_OfficersDeckhouse_Rotation = new float[3]{ 0f, 90f, 0f };
+
 	public GameObject[] btnWeatherDeckMap = new GameObject[2];
 	public GameObject[] btnTweenDeckMap = new GameObject[2];
 	public GameObject[] btnCargoHoldMap = new GameObject[2];
@@ -33,8 +37,6 @@ public class PlayerScript : MonoBehaviour {
 
 		CreateButtonArray ();
 
-		print ("start");
-
 		if(activeScene.name.Equals("Map") && !PlayerPrefs.HasKey("savedScene")) { // first time opened. nothing in playerpreds
 
 			PlayerPrefs.SetString ("savedScene", "WeatherDeck");
@@ -42,13 +44,17 @@ public class PlayerScript : MonoBehaviour {
 			PlayerPrefs.SetFloat ("positionY", default_WeatherDeck_Position[1]);
 			PlayerPrefs.SetFloat ("positionZ", default_WeatherDeck_Position[2]);
 
+			PlayerPrefs.SetFloat ("rotationX", default_WeatherDeck_Rotation[0]);
+			PlayerPrefs.SetFloat ("rotationY", default_WeatherDeck_Rotation[1]);
+			PlayerPrefs.SetFloat ("rotationZ", default_WeatherDeck_Rotation[2]);
+
 //			PlayerPrefs.SetString ("selectBtnSelected", "Btn-WeatherDeckScene");
 //			print("GameObjects " + Resources.FindObjectsOfTypeAll(typeof(GameObject)));
 		
 
 		} else if ( !activeScene.name.Equals("Map") ) {
 			transform.position = new Vector3 (PlayerPrefs.GetFloat ("positionX"), PlayerPrefs.GetFloat ("positionY"), PlayerPrefs.GetFloat ("positionZ"));
-//			transform.eulerAngles = new Vector3 (PlayerPrefs.GetFloat ("rotationX"), PlayerPrefs.GetFloat ("rotationY"), PlayerPrefs.GetFloat ("rotationZ"));
+			transform.transform.eulerAngles = new Vector3 (PlayerPrefs.GetFloat ("rotationX"), PlayerPrefs.GetFloat ("rotationY"), PlayerPrefs.GetFloat ("rotationZ"));
 		
 		} else { // active scene is map
 
@@ -68,19 +74,17 @@ public class PlayerScript : MonoBehaviour {
 
 
 	void Update () {
-		/*
-		 * 	`GvrControllerInput.AppButton' is obsolete: 
-		 * `Replaced by GvrControllerInputDevice.GetButton(GvrControllerButton.App).'
-		*/
-
-//		GvrControllerButton buttons = new GvrControllerButton();
-//		GvrControllerInputDevice btns = new GvrControllerInputDevice ();
 
 
-		if (GvrControllerInput.AppButton) { // if app button clicked
-			
+//		print("length::::::::: " + instances.Length);
+//		print("api::::::::: " + instances[0].Orientation);
+//		print("button::::::::: " + instances[0].GetButton(GvrControllerButton.App));
+
+
+//		if (GvrControllerInput.AppButton) { // if app button clicked
 //		if (GvrControllerInputDevice.GetButton(GvrControllerButton.App)) { 
-//		if (btns.GetButton(GvrControllerButton.App)) { 
+//		if (instances.Length != 0 && instances[0].GetButton(GvrControllerButton.App)) { 
+		if (Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.App)) {
 
 			if (activeScene.name == "Map") {
 				//Resume ();
@@ -94,9 +98,9 @@ public class PlayerScript : MonoBehaviour {
 				PlayerPrefs.SetFloat("positionY", transform.position.y);
 				PlayerPrefs.SetFloat("positionZ", transform.position.z);
 
-				//		PlayerPrefs.SetFloat("rotationX", transform.rotation.x);
-				//		PlayerPrefs.SetFloat("rotationY", transform.rotation.y);
-				//		PlayerPrefs.SetFloat("rotationZ", transform.rotation.z);
+				PlayerPrefs.SetFloat("rotationX", transform.eulerAngles.x);
+				PlayerPrefs.SetFloat("rotationY", transform.eulerAngles.y);
+				PlayerPrefs.SetFloat("rotationZ", transform.eulerAngles.z);
 
 				SceneManager.LoadScene ( "Map" );
 			}

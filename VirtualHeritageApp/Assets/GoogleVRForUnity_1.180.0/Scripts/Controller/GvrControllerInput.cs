@@ -461,9 +461,12 @@ public class GvrControllerInput : MonoBehaviour {
   [System.Obsolete("Replaced by GvrControllerInputDevice.GetButton(GvrControllerButton.App).")]
   public static bool AppButton {
     get {
+		print ("length:::::: " + instances.Length);
       if (instances.Length == 0) {
+		print ("111111111111");
         return false;
       }
+		print ("22222222222");
       return instances[0].GetButton(GvrControllerButton.App);
     }
   }

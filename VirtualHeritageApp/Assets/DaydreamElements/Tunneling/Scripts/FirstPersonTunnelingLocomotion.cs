@@ -79,15 +79,17 @@ namespace DaydreamElements.Tunneling {
 	
 	*/
     protected virtual void Update() {
-      if (GvrControllerInput.TouchDown) {
-//	if (GvrControllerInputDevice.GetButtonDown(GvrControllerButton.TouchPadTouch) ) {
+//      if (GvrControllerInput.TouchDown) {
+		if (Gvr.Internal.ControllerUtils.AnyButtonDown(GvrControllerButton.TouchPadTouch) ) {
         initTouch = GvrControllerInput.TouchPos;
-//		initTouch = GvrControllerInputDevice.TouchPos;
+//		initTouch = Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.TouchPos);
+//		initTouch =GvrControllerInputDevice.TouchPos;
       } else if (CanStartMoving()) {
         isMoving = true;
         smoothTouch = Vector2.zero;
         vignetteController.ShowVignette();
-      } else if (GvrControllerInput.TouchUp) {
+//      } else if (GvrControllerInput.TouchUp) {
+		} else if (Gvr.Internal.ControllerUtils.AnyButtonUp(GvrControllerButton.TouchPadTouch) ) {
         StopMoving();
       }
 
@@ -197,7 +199,8 @@ namespace DaydreamElements.Tunneling {
     }
 
     private bool CanStartMoving() {
-      if (!GvrControllerInput.IsTouching) {
+//      if (!GvrControllerInput.IsTouching) {
+	if (!Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.TouchPadTouch) ) {
         return false;
       }
 

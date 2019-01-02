@@ -16,6 +16,10 @@ public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 	public float nextScenePositionY;
 	public float nextScenePositionZ;
 
+	public float nextSceneRotationX;
+	public float nextSceneRotationY;
+	public float nextSceneRotationZ;
+
 	public string sceneName;
 	public Scene activeScene;
 
@@ -40,25 +44,37 @@ public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 			PlayerPrefs.SetFloat("positionY", nextScenePositionY);
 			PlayerPrefs.SetFloat("positionZ", nextScenePositionZ);
 
+			PlayerPrefs.SetFloat("rotationX", nextSceneRotationX);
+			PlayerPrefs.SetFloat("rotationY", nextSceneRotationY);
+			PlayerPrefs.SetFloat("rotationZ", nextSceneRotationZ);
+
 			SceneManager.LoadScene(sceneName);
 
 		} else { //if (activeScene.name.Equals( "Map") ) {
 			
 			float[] posAtNextScene = new float[3];
+			float[] rotAtNextScene = new float[3];
 			if (sceneName.Equals ("WeatherDeck")) {
 				posAtNextScene = playerScript.default_WeatherDeck_Position;
+				rotAtNextScene = playerScript.default_WeatherDeck_Rotation;
 			}
 			else if (sceneName.Equals ("MainDeckhouse")) {
 				posAtNextScene = playerScript.default_MainDeckhouse_Position;
+				rotAtNextScene = playerScript.default_MainDeckhouse_Rotation;
 
 			}
 			else if (sceneName.Equals ("OfficersDeckhouse")) {
 				posAtNextScene = playerScript.default_OfficersDeckhouse_Position;
+				rotAtNextScene = playerScript.default_OfficersDeckhouse_Rotation;
 			}
 
 			PlayerPrefs.SetFloat ("positionX", posAtNextScene [0]);
 			PlayerPrefs.SetFloat ("positionY", posAtNextScene [1]);
 			PlayerPrefs.SetFloat ("positionZ", posAtNextScene [2]);
+
+			PlayerPrefs.SetFloat ("rotationX", rotAtNextScene [0]);
+			PlayerPrefs.SetFloat ("rotationY", rotAtNextScene [1]);
+			PlayerPrefs.SetFloat ("rotationZ", rotAtNextScene [2]);
 
 			SceneManager.LoadScene (sceneName);
 
