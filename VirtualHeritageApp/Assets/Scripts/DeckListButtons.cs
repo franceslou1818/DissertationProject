@@ -43,11 +43,9 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 	}
 
 	public void OnPointerEnter(PointerEventData pointerEventData) {
-//		print ("OnPointerEnter" + this.gameObject.name);
 		this.gameObject.GetComponent<Image> ().color = highlightedCol;
 	}
 	public void OnPointerExit(PointerEventData pointerEventData) {
-//		print ("OnPointerExit" + this.gameObject.name);
 		this.gameObject.GetComponent<Image> ().color = normalCol;
 	}
 
