@@ -7929,7 +7929,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941650421949776, guid: f7f206287b1f84b0484b4c88ab5e3d61, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.731
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 4941650421949776, guid: f7f206287b1f84b0484b4c88ab5e3d61, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8280,6 +8280,10 @@ Prefab:
       propertyPath: popUpInfos.Array.data[18]
       value: 
       objectReference: {fileID: 1045156331}
+    - target: {fileID: 4941650421949776, guid: f7f206287b1f84b0484b4c88ab5e3d61, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.995636
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7f206287b1f84b0484b4c88ab5e3d61, type: 2}
   m_IsPrefabParent: 0
