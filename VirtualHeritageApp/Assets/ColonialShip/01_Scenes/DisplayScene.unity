@@ -303,6 +303,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1205614443198496, guid: f855683b127eede4c9d170be2672ae27, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f855683b127eede4c9d170be2672ae27, type: 2}
   m_IsPrefabParent: 0
@@ -315,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836393246}
   - component: {fileID: 836393245}
+  - component: {fileID: 836393247}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionReflection Probes Camera
   m_TagString: Untagged
@@ -371,6 +376,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &836393247
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836393244}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &885632409
 GameObject:
   m_ObjectHideFlags: 0
