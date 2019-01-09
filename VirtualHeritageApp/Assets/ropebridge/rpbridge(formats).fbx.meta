@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: fe4e02ae3ef90452fb811217f7439f9b
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: basamaklar
+    100002: Cinema4D_Editor
+    100004: citler1
+    100006: citler2
+    100008: citler3
+    100010: citler4
+    100012: direk1
+    100014: direk2
+    100016: dubalar
+    100018: kisa1_1
+    100020: kisa2_1
+    100022: kisa3_1
+    100024: kisa4_1
+    100026: kopru
+    100028: merdiven1_1
+    100030: merdiven2_1
+    100032: merkez_1
+    100034: //RootNode
+    100036: sabit1_1
+    100038: sag_baglar
+    100040: sag_dugumler
+    100042: sag_ust_1
+    100044: sarma1_1
+    100046: sarma2_1
+    100048: sarma3_1
+    100050: sarma4_1
+    100052: sol_baglar
+    100054: sol_dugumler
+    100056: sol_ust_1
+    100058: ust_sarma1_1
+    100060: ust_sarma2_1
+    100062: ust_sarma3_1
+    100064: ust_sarma4_1
+    400000: basamaklar
+    400002: Cinema4D_Editor
+    400004: citler1
+    400006: citler2
+    400008: citler3
+    400010: citler4
+    400012: direk1
+    400014: direk2
+    400016: dubalar
+    400018: kisa1_1
+    400020: kisa2_1
+    400022: kisa3_1
+    400024: kisa4_1
+    400026: kopru
+    400028: merdiven1_1
+    400030: merdiven2_1
+    400032: merkez_1
+    400034: //RootNode
+    400036: sabit1_1
+    400038: sag_baglar
+    400040: sag_dugumler
+    400042: sag_ust_1
+    400044: sarma1_1
+    400046: sarma2_1
+    400048: sarma3_1
+    400050: sarma4_1
+    400052: sol_baglar
+    400054: sol_dugumler
+    400056: sol_ust_1
+    400058: ust_sarma1_1
+    400060: ust_sarma2_1
+    400062: ust_sarma3_1
+    400064: ust_sarma4_1
+    2100000: sag baglar
+    2100002: sol baglar
+    2100004: merkez
+    2100006: sol ust
+    2100008: sag ust
+    2100010: sag dugumler
+    2100012: sol dugumler
+    2100014: ust sarma3
+    2100016: ust sarma4
+    2100018: ust sarma2
+    2100020: ust sarma1
+    2100022: sarma3
+    2100024: sarma4
+    2100026: sarma2
+    2100028: sarma1
+    2100030: citler4
+    2100032: citler3
+    2100034: citler2
+    2100036: citler1
+    2100038: merdiven1
+    2100040: merdiven2
+    2100042: dubalar
+    2100044: basamaklar
+    2100046: direk1
+    2100048: direk2
+    2100050: kisa4
+    2100052: kisa3
+    2100054: kisa2
+    2100056: kisa1
+    2100058: sabit1
+    2300000: basamaklar
+    2300002: citler1
+    2300004: citler2
+    2300006: citler3
+    2300008: citler4
+    2300010: direk1
+    2300012: direk2
+    2300014: dubalar
+    2300016: kisa1_1
+    2300018: kisa2_1
+    2300020: kisa3_1
+    2300022: kisa4_1
+    2300024: merdiven1_1
+    2300026: merdiven2_1
+    2300028: merkez_1
+    2300030: sabit1_1
+    2300032: sag_baglar
+    2300034: sag_dugumler
+    2300036: sag_ust_1
+    2300038: sarma1_1
+    2300040: sarma2_1
+    2300042: sarma3_1
+    2300044: sarma4_1
+    2300046: sol_baglar
+    2300048: sol_dugumler
+    2300050: sol_ust_1
+    2300052: ust_sarma1_1
+    2300054: ust_sarma2_1
+    2300056: ust_sarma3_1
+    2300058: ust_sarma4_1
+    3300000: basamaklar
+    3300002: citler1
+    3300004: citler2
+    3300006: citler3
+    3300008: citler4
+    3300010: direk1
+    3300012: direk2
+    3300014: dubalar
+    3300016: kisa1_1
+    3300018: kisa2_1
+    3300020: kisa3_1
+    3300022: kisa4_1
+    3300024: merdiven1_1
+    3300026: merdiven2_1
+    3300028: merkez_1
+    3300030: sabit1_1
+    3300032: sag_baglar
+    3300034: sag_dugumler
+    3300036: sag_ust_1
+    3300038: sarma1_1
+    3300040: sarma2_1
+    3300042: sarma3_1
+    3300044: sarma4_1
+    3300046: sol_baglar
+    3300048: sol_dugumler
+    3300050: sol_ust_1
+    3300052: ust_sarma1_1
+    3300054: ust_sarma2_1
+    3300056: ust_sarma3_1
+    3300058: ust_sarma4_1
+    4300000: sag_baglar
+    4300002: sol_baglar
+    4300004: merkez_1
+    4300006: sol_ust_1
+    4300008: sag_ust_1
+    4300010: sag_dugumler
+    4300012: sol_dugumler
+    4300014: ust_sarma3_1
+    4300016: ust_sarma4_1
+    4300018: ust_sarma2_1
+    4300020: ust_sarma1_1
+    4300022: sarma3_1
+    4300024: sarma4_1
+    4300026: sarma2_1
+    4300028: sarma1_1
+    4300030: citler4
+    4300032: citler3
+    4300034: citler2
+    4300036: citler1
+    4300038: merdiven1_1
+    4300040: merdiven2_1
+    4300042: dubalar
+    4300044: basamaklar
+    4300046: direk1
+    4300048: direk2
+    4300050: kisa4_1
+    4300052: kisa3_1
+    4300054: kisa2_1
+    4300056: kisa1_1
+    4300058: sabit1_1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
