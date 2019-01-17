@@ -7,9 +7,13 @@ using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour {
 
-	public float[] default_WeatherDeck_Position = new float[3]{ 1f, 4.15f, 70.3f };
-	public float[] default_MainDeckhouse_Position = new float[3]{ -3.62f, 2.13f, 0f };
-	public float[] default_OfficersDeckhouse_Position = new float[3]{ -8.17f, 1.34f, 7.56f };
+//	public float[] default_WeatherDeck_Position = new float[3]{ 1f, 5.15f, 70.3f };
+//	public float[] default_MainDeckhouse_Position = new float[3]{ -3.62f, 1.13f, 0f };
+//	public float[] default_OfficersDeckhouse_Position = new float[3]{ -8.17f, 2.34f, 7.56f };
+
+	public float[] default_WeatherDeck_Position = new float[3]{ 0f, 0f, 0f };
+	public float[] default_MainDeckhouse_Position = new float[3]{ 0f, 0f, 0f };
+	public float[] default_OfficersDeckhouse_Position = new float[3]{ 0f, 0f, 0f };
 
 	public float[] default_WeatherDeck_Rotation = new float[3]{ 0f, 0f, 0f };
 	public float[] default_MainDeckhouse_Rotation = new float[3]{ 0f, 90f, 0f };
@@ -30,15 +34,22 @@ public class PlayerScript : MonoBehaviour {
 
 	public Scene activeScene;
 
+//	void Awake() {
+//		PlayerPrefs.DeleteAll ();
+//	}
 
 	void Start() {
-		
+
+//		print("playerprefs: " + PlayerPrefs.GetFloat ("positionX") 
+//								+","+ PlayerPrefs.GetFloat ("positionY")
+//								+","+ PlayerPrefs.GetFloat ("positionZ"));
+
 		activeScene = SceneManager.GetActiveScene ();
 
 		CreateButtonArray ();
 
 		if(activeScene.name.Equals("Map") && !PlayerPrefs.HasKey("savedScene")) { // first time opened. nothing in playerpreds
-
+			
 			PlayerPrefs.SetString ("savedScene", "WeatherDeck");
 			PlayerPrefs.SetFloat ("positionX", default_WeatherDeck_Position[0]);
 			PlayerPrefs.SetFloat ("positionY", default_WeatherDeck_Position[1]);
@@ -48,13 +59,15 @@ public class PlayerScript : MonoBehaviour {
 			PlayerPrefs.SetFloat ("rotationY", default_WeatherDeck_Rotation[1]);
 			PlayerPrefs.SetFloat ("rotationZ", default_WeatherDeck_Rotation[2]);
 
-//			PlayerPrefs.SetString ("selectBtnSelected", "Btn-WeatherDeckScene");
-//			print("GameObjects " + Resources.FindObjectsOfTypeAll(typeof(GameObject)));
 		
 
 		} else if ( !activeScene.name.Equals("Map") ) {
-			transform.position = new Vector3 (PlayerPrefs.GetFloat ("positionX"), PlayerPrefs.GetFloat ("positionY"), PlayerPrefs.GetFloat ("positionZ"));
-			transform.transform.eulerAngles = new Vector3 (PlayerPrefs.GetFloat ("rotationX"), PlayerPrefs.GetFloat ("rotationY"), PlayerPrefs.GetFloat ("rotationZ"));
+			transform.position = new Vector3 (PlayerPrefs.GetFloat ("positionX"), 
+												PlayerPrefs.GetFloat ("positionY"), 
+												PlayerPrefs.GetFloat ("positionZ"));
+			transform.transform.eulerAngles = new Vector3 (PlayerPrefs.GetFloat ("rotationX"), 
+															PlayerPrefs.GetFloat ("rotationY"), 
+															PlayerPrefs.GetFloat ("rotationZ"));
 		
 		} else { // active scene is map
 
@@ -122,8 +135,11 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void OnApplicationQuit() {
+		print ("OnApplicationQuit1");
 		PlayerPrefs.DeleteAll ();
+		print ("OnApplicationQuit2");
 	}
+
 
 
 }

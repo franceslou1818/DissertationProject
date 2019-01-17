@@ -8284,6 +8284,56 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.995636
       objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_WeatherDeck_Position.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_WeatherDeck_Position.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_WeatherDeck_Position.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_MainDeckhouse_Position.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_MainDeckhouse_Position.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_OfficersDeckhouse_Position.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_OfficersDeckhouse_Position.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: default_OfficersDeckhouse_Position.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: test1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987219972378148, guid: f7f206287b1f84b0484b4c88ab5e3d61,
+        type: 2}
+      propertyPath: test2
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7f206287b1f84b0484b4c88ab5e3d61, type: 2}
   m_IsPrefabParent: 0
