@@ -16,8 +16,8 @@ public class PlayerScript : MonoBehaviour {
 	public float[] default_OfficersDeckhouse_Position = new float[3]{ 0f, 0f, 0f };
 
 	public float[] default_WeatherDeck_Rotation = new float[3]{ 0f, 0f, 0f };
-	public float[] default_MainDeckhouse_Rotation = new float[3]{ 0f, 90f, 0f };
-	public float[] default_OfficersDeckhouse_Rotation = new float[3]{ 0f, 90f, 0f };
+	public float[] default_MainDeckhouse_Rotation = new float[3]{ 0f, 0f, 0f };
+	public float[] default_OfficersDeckhouse_Rotation = new float[3]{ 0f, 0f, 0f };
 
 	public GameObject[] btnWeatherDeckMap = new GameObject[2];
 	public GameObject[] btnTweenDeckMap = new GameObject[2];
