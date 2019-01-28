@@ -19,6 +19,9 @@ public class PlayerScript : MonoBehaviour {
 	public float[] default_MainDeckhouse_Rotation = new float[3]{ 0f, 0f, 0f };
 	public float[] default_OfficersDeckhouse_Rotation = new float[3]{ 0f, 0f, 0f };
 
+
+	public GameObject[] btnfactsNfigures = new GameObject[2];
+
 	public GameObject[] btnWeatherDeckMap = new GameObject[2];
 	public GameObject[] btnTweenDeckMap = new GameObject[2];
 	public GameObject[] btnCargoHoldMap = new GameObject[2];
@@ -73,8 +76,8 @@ public class PlayerScript : MonoBehaviour {
 
 			DeckListButtons buttonScript = btnWeatherDeckMap[0].GetComponent<DeckListButtons>();
 
-			string savedButtonSelected = PlayerPrefs.GetString ("selectBtnSelected", "Btn-WeatherDeckScene");
-
+//			string savedButtonSelected = PlayerPrefs.GetString ("selectBtnSelected", "Btn-WeatherDeckScene");
+			string savedButtonSelected = PlayerPrefs.GetString ("selectBtnSelected", "Btn-factsNfigures");
 			foreach (GameObject[] objArr in allButtons) {
 				if (savedButtonSelected.Equals(objArr[0].name) ) {
 					buttonScript.SetObjsActive( objArr[0] );
@@ -89,14 +92,6 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 
 
-//		print("length::::::::: " + instances.Length);
-//		print("api::::::::: " + instances[0].Orientation);
-//		print("button::::::::: " + instances[0].GetButton(GvrControllerButton.App));
-
-
-//		if (GvrControllerInput.AppButton) { // if app button clicked
-//		if (GvrControllerInputDevice.GetButton(GvrControllerButton.App)) { 
-//		if (instances.Length != 0 && instances[0].GetButton(GvrControllerButton.App)) { 
 		if (Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.App)) {
 
 			if (activeScene.name == "Map") {
@@ -123,6 +118,9 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void CreateButtonArray (){
+		
+		allButtons.Add(btnfactsNfigures);
+
 		allButtons.Add(btnWeatherDeckMap);
 		allButtons.Add(btnTweenDeckMap);
 		allButtons.Add(btnCargoHoldMap);
