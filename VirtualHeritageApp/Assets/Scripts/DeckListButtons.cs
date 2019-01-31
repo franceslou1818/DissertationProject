@@ -11,16 +11,17 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 	public Color highlightedCol = Color.green;
 	public Color normalCol = Color.blue;
 
-	GameObject thePlayer;
-	PlayerScript playerScript;
+//	GameObject thePlayer;
+//	PlayerScript playerScript;
+	MapScript mapScript;
 
 	GameObject mapCanvasNeeded = null;
 
-	int counter = 0; // for debugging purposes
 
 	void Awake() {
-		thePlayer = GameObject.Find("Player");
-		playerScript = thePlayer.GetComponent<PlayerScript>();
+//		thePlayer = GameObject.Find("Player");
+//		playerScript = thePlayer.GetComponent<PlayerScript>();
+		mapScript = GameObject.Find("MapScript").GetComponent<MapScript>();
 	}
 
 	void Start () {
@@ -33,7 +34,6 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 		
 
 	public void OnPointerClick(PointerEventData pointerEventData) {
-		counter++;
 		GameObject btnClicked = this.gameObject;
 
 		PlayerPrefs.SetString ("selectBtnSelected", btnClicked.name);
@@ -54,33 +54,20 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 //		GameObject mapCanvasNeeded = null;
 
-		foreach (GameObject[] objArr in playerScript.allButtons) {
+//		foreach (GameObject[] objArr in playerScript.allButtons) {
+		foreach (GameObject[] objArr in mapScript.allButtons) {
 
 			if (btnClicked==objArr[0]) {
 				mapCanvasNeeded = objArr[1];
 				objArr[1].SetActive (true);
 
 				if (objArr.Length != 2) {
-//					objArr[2].SetActive (true);
-//					playerScript.setOneInfoButtonActive (objArr[2]);
-					/*
-//					print ("objArr2: " + "Btn-"+objArr[2].name);
-					GameObject infoBtn = GameObject.Find ( "Btn-"+objArr[2].name);
-					ButtonClick buttonScript = infoBtn.GetComponent<ButtonClick>();
-					buttonScript.setButtonActiveOrNot(true);
-					*/
 					GameObject buttonObj = GameObject.Find (objArr[2].name);
 					ButtonClick bc = buttonObj.GetComponent<ButtonClick>();
 					bc.setOnlyThisActiveOrNot (true);
 				}
-
 			} else {
-
 				objArr[1].SetActive (false);
-//				if (objArr.Length != 2) {
-////					print ("test2");
-//					objArr[2].SetActive (false);
-//				}
 			}
 				
 		}
@@ -88,15 +75,11 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 	}
 
-//	public void setOneInfoButtonActive(GameObject obj) {}
 		
 	public void swapImgToArrow(GameObject btnClicked) {
-		//		print("allButtons: " + playerScript.allButtons);
 
-//		print("******btnClicked: "  + counter + btnClicked.name);
-
-		foreach (GameObject[] objArr in playerScript.allButtons) {
-
+//		foreach (GameObject[] objArr in playerScript.allButtons) {
+		foreach (GameObject[] objArr in mapScript.allButtons) {
 
 			if (btnClicked == objArr [0] ) { // show arrow
 				btnClicked.transform.GetChild (1).gameObject.SetActive (false);

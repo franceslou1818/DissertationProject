@@ -16,17 +16,19 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	public bool isActive;
 	public bool isPointed;
 
-	GameObject thePlayer;
-	PlayerScript playerScript;
+//	GameObject thePlayer;
+//	PlayerScript playerScript;
+	MapScript mapScript;
 
-//	int counter =0;
+
 
 //	void Start () {
 	void Awake () {
 		isPointed = false;
 
-		thePlayer = GameObject.Find("Player");
-		playerScript = thePlayer.GetComponent<PlayerScript>();
+//		thePlayer = GameObject.Find("Player");
+//		playerScript = thePlayer.GetComponent<PlayerScript>();
+		mapScript = GameObject.Find("MapScript").GetComponent<MapScript>();
 
 //		print ("-----start: " + this.gameObject.name + (GameObject.Find(this.gameObject.name.Substring(4)) == null));
 //		print("Button Click awake");
@@ -56,7 +58,7 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
 	public void setOnlyThisActiveOrNot(bool b) {
 
-		foreach (GameObject info in playerScript.popUpInfos) {
+		foreach (GameObject info in mapScript.popUpInfos) {
 
 //			print ("***test0: " + info.name.Substring(5)+"--"+this.name.Substring(4) 
 //				+"****"+ info.name.Substring(5).Equals(this.name.Substring(4)));
@@ -88,8 +90,8 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 		}
 
 
-		foreach (GameObject[] objArr in playerScript.allButtons) {
-			DeckListButtons buttonScript = playerScript.btnWeatherDeckMap [0].GetComponent<DeckListButtons> ();
+		foreach (GameObject[] objArr in mapScript.allButtons) {
+			DeckListButtons buttonScript = mapScript.btnWeatherDeckMap [0].GetComponent<DeckListButtons> ();
 
 			if (objArr.Length == 3 && this.gameObject.name.Equals (objArr [2].name)) {
 
@@ -98,8 +100,8 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 				buttonScript.swapImgToArrow (objArr [0]);
 				break;
 			} else { // no scene with the corresponding button clicked
-					buttonScript.SetObjsActive (playerScript.btnWeatherDeckMap [0]);
-					buttonScript.swapImgToArrow (playerScript.btnWeatherDeckMap [0]);
+				buttonScript.SetObjsActive (mapScript.btnWeatherDeckMap [0]);
+				buttonScript.swapImgToArrow (mapScript.btnWeatherDeckMap [0]);
 
 			}
 		}
