@@ -123,7 +123,7 @@ public class PlayerScript : MonoBehaviour {
 		if (sceneName == "Map") {
 //			print ("gotoscene if Map");
 			thePlayer.transform.position = new Vector3 (0f,0f,0f);
-			thePlayer.transform.transform.eulerAngles = new Vector3 (0f,0f,0f);
+			thePlayer.transform.transform.eulerAngles = new Vector3 (0f,180f,0f);
 		} else {
 //			print("gotosceneElse in pp: " + PlayerPrefs.GetFloat ("positionX",0f) + ","+ 
 //											PlayerPrefs.GetFloat ("positionY",0f) + ","+ 
