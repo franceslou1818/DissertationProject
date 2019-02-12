@@ -10,13 +10,18 @@ public class PlayerScript : MonoBehaviour {
 
 	private Scene activeScene;
 
+
 	public SceneLoader sceneLoader;
 
 	public GameObject thePlayer;
 
+	private string prevScene = "Boot";
+//	public bool appBtnClicked = false; //app Btn should only be Clicked Once In A Scene
 
 	void Start() {
-		
+//		prevScene = "Boot";
+//		appBtnClicked = false;
+
 
 //		print ("start at scene: " + SceneManager.GetActiveScene ().name);
 
@@ -83,15 +88,16 @@ public class PlayerScript : MonoBehaviour {
 		activeScene = SceneManager.GetActiveScene ();
 
 
-		if (Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.App)) {
+		if ( Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.App) && activeScene.name != prevScene) {
+			
 
 			if (activeScene.name == "Map") {
-				print ("update if");
+//				print ("update if");
 
 				GoToScene (PlayerPrefs.GetString("savedScene", "WeatherDeck")); // load savedScene but if null, load WeatherDeck
 
 			} else {
-				print ("update else");
+//				print ("update else");
 				PlayerPrefs.SetString ("savedScene", activeScene.name);
 
 				PlayerPrefs.SetFloat("positionX", thePlayer.transform.position.x);
@@ -107,6 +113,8 @@ public class PlayerScript : MonoBehaviour {
 
 			}
 
+//			appBtnClicked = true;
+
 		}
 	
 	}
@@ -116,14 +124,15 @@ public class PlayerScript : MonoBehaviour {
 //		print ("sceneName: " + sceneName);
 //		print ("sceneloader: " + sceneLoader);
 
-//		sceneLoader = GameObject.Find ("Player").GetComponent<SceneLoader> ();
-
+		prevScene = activeScene.name;
 		sceneLoader.LoadScene(sceneName);
+
+//		print ("after");
 
 		if (sceneName == "Map") {
 //			print ("gotoscene if Map");
 			thePlayer.transform.position = new Vector3 (0f,0f,0f);
-			thePlayer.transform.transform.eulerAngles = new Vector3 (0f,0f,0f);
+			thePlayer.transform.transform.eulerAngles = new Vector3 (0f,180f,0f);
 		} else {
 //			print("gotosceneElse in pp: " + PlayerPrefs.GetFloat ("positionX",0f) + ","+ 
 //											PlayerPrefs.GetFloat ("positionY",0f) + ","+ 
