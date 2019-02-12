@@ -47,6 +47,7 @@ using UnityEngine.SceneManagement;
         }
 
         private void OnSceneLoaded(Scene unused, Scene unused2) {
+//			print ("OnSceneLoaded1");
             if (sceneLoading) {
                 if (callback != null) {
                     callback();
@@ -54,6 +55,7 @@ using UnityEngine.SceneManagement;
                 }
                 StartCoroutine(WaitAndFadeIn());
             }
+//			print ("OnSceneLoaded2");
         }
 
         private IEnumerator WaitAndFadeIn() {
