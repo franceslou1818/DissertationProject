@@ -16,22 +16,15 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	public bool isActive;
 	public bool isPointed;
 
-//	GameObject thePlayer;
-//	PlayerScript playerScript;
 	MapScript mapScript;
 
 
 
-//	void Start () {
 	void Awake () {
 		isPointed = false;
 
-//		thePlayer = GameObject.Find("Player");
-//		playerScript = thePlayer.GetComponent<PlayerScript>();
 		mapScript = GameObject.Find("MapScript").GetComponent<MapScript>();
 
-//		print ("-----start: " + this.gameObject.name + (GameObject.Find(this.gameObject.name.Substring(4)) == null));
-//		print("Button Click awake");
 		if (GameObject.Find (this.gameObject.name.Substring (4)) == null) {
 			isActive = false;
 			this.gameObject.GetComponent<Image> ().color = blueCol;
@@ -60,9 +53,6 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
 		foreach (GameObject info in mapScript.popUpInfos) {
 
-//			print ("***test0: " + info.name.Substring(5)+"--"+this.name.Substring(4) 
-//				+"****"+ info.name.Substring(5).Equals(this.name.Substring(4)));
-
 			bool isButtonAndInfoEqual = info.name.Substring(5).Equals(this.name.Substring(4));
 
 			if (isButtonAndInfoEqual) {
@@ -76,7 +66,6 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 			}
 		}
 
-//		print ("end of for each: " + this.gameObject.name + isActive);
 	}
 
 
@@ -110,12 +99,10 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	}
 
 	public void OnPointerEnter(PointerEventData pointerEventData) {
-//		print ("OnPointerEnter " + this.gameObject.name + isActive);
 		isPointed = true;
 	}
 
 	public void OnPointerExit(PointerEventData pointerEventData) {
-//		print ("OnPointerExit " + this.gameObject.name + isActive);
 		isPointed = false;
 	}
 

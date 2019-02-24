@@ -22,7 +22,6 @@ public class MapScript : MonoBehaviour {
 
 
 	void Start () {
-//		print ("Start");
 
 		CreateButtonArray ();
 
