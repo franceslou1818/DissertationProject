@@ -11,24 +11,19 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 	public Color highlightedCol = Color.green;
 	public Color normalCol = Color.blue;
 
-//	GameObject thePlayer;
-//	PlayerScript playerScript;
+
 	MapScript mapScript;
 
 	GameObject mapCanvasNeeded = null;
 
 
 	void Awake() {
-//		thePlayer = GameObject.Find("Player");
-//		playerScript = thePlayer.GetComponent<PlayerScript>();
+
 		mapScript = GameObject.Find("MapScript").GetComponent<MapScript>();
 	}
 
 	void Start () {
 		this.gameObject.GetComponent<Image> ().color = normalCol;
-	
-//		thePlayer = GameObject.Find("Player");
-//		playerScript = thePlayer.GetComponent<PlayerScript>();
 
 	}
 		
@@ -52,9 +47,7 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 	public void SetObjsActive(GameObject btnClicked) {
 
-//		GameObject mapCanvasNeeded = null;
 
-//		foreach (GameObject[] objArr in playerScript.allButtons) {
 		foreach (GameObject[] objArr in mapScript.allButtons) {
 
 			if (btnClicked==objArr[0]) {
@@ -78,7 +71,6 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 		
 	public void swapImgToArrow(GameObject btnClicked) {
 
-//		foreach (GameObject[] objArr in playerScript.allButtons) {
 		foreach (GameObject[] objArr in mapScript.allButtons) {
 
 			if (btnClicked == objArr [0] ) { // show arrow
@@ -90,7 +82,6 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 			}
 
 			if (objArr.Length == 2 && objArr [1] == mapCanvasNeeded) {
-//				print ("objArr: " +  objArr[0].name);
 				objArr[0].transform.GetChild (1).gameObject.SetActive (false);
 				objArr[0].transform.GetChild (2).gameObject.SetActive (true);	
 			}
