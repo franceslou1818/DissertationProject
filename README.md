@@ -4,22 +4,22 @@ GitHub Repository - https://github.com/franceslou1818/DissertationProject
 
 This VR application project was developed using the following main tools:
 
-###Hardaware:
+### Hardaware:
 Dayream View VR
 Samsung Galaxy Note 8
 
-###Software:
+### Software:
 Unity version 2017.4.12f1
 GoogleVR SDK 1.180.0
 C#
 
 To run this on a device, a compatible phone and a daydream VR is needed
 
-##Importing into Unity
+## Importing into Unity
 Click File -> Open Project -> Select this repository, whichever directory you have saved this on your computer.
 In the project tab, you will find a folder called "Scenes", each of which can be selected to view the entire scene.
 
-##Running the APK
+## Running the APK
 In the Build folder, you will find an apk file that you can download on your compatible Android device.
 1. Open your Android’s Settings. It’s the  Image titled Android7settingsapp.png icon typically found in the app drawer.
 2. Scroll down and tap Security.
