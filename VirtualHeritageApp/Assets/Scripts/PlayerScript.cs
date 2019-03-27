@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 
+//behaviour of the player throughout their experience.
 public class PlayerScript : MonoBehaviour {
-
 
 	private Scene activeScene;
 
@@ -21,21 +21,19 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-
-
-
 	void Update () {
 		
 		activeScene = SceneManager.GetActiveScene ();
 
-
+		// when the app button is clicked, scene is changed.
 		if ( Gvr.Internal.ControllerUtils.AnyButton(GvrControllerButton.App) && activeScene.name != prevScene) {
 			
-
+			// if the player is in the map scene, get the scene thep player selected to go to, which is in the PlayerPrefs
 			if (activeScene.name == "Map") {
 
 				GoToScene (PlayerPrefs.GetString("savedScene", "WeatherDeck")); // load savedScene but if null, load WeatherDeck
-
+			
+			// if the player is in the virtual museums, save the current position in the current scene then go to the map scene. 
 			} else {
 				PlayerPrefs.SetString ("savedScene", activeScene.name);
 
@@ -57,6 +55,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	}
 
+	// change scene.
 	public void GoToScene(string sceneName) {
 
 		prevScene = activeScene.name;

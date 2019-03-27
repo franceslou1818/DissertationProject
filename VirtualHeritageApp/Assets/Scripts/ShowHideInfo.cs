@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// information corresponding to an orb in the virtual world is shown when hovered over.
 public class ShowHideInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	public GameObject infoObj;
-//	public bool show = false;
-
 
 	public void OnPointerEnter(PointerEventData eventData) {
 
-//		print ("enter");
 		infoObj.SetActive (true);
 	
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
-//		print ("exit");
 		infoObj.SetActive (false);
 	}
 }

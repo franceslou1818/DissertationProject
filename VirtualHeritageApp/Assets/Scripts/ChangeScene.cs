@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+//changing scene either from the virtual museums to another or from the map scene
 public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 
 	public float nextScenePositionX;
@@ -28,6 +29,7 @@ public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 		
 		activeScene = SceneManager.GetActiveScene ();
 
+		// getting the position where the user last left off
 		if (!activeScene.name.Equals( "Map") ) {
 			//			print("else change scene");
 			PlayerPrefs.SetFloat("positionX", nextScenePositionX);
@@ -37,12 +39,11 @@ public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 			PlayerPrefs.SetFloat("rotationX", nextSceneRotationX);
 			PlayerPrefs.SetFloat("rotationY", nextSceneRotationY);
 			PlayerPrefs.SetFloat("rotationZ", nextSceneRotationZ);
-
-//			SceneManager.LoadScene(sceneName);
-
+					
+		// if there is no position in PlayerPref, ge default positions. e.g. due to the fact its the first time using the app.
 		} else { //if (activeScene.name.Equals( "Map") ) 
 
-			//defaults 0f
+
 			float[] posAtNextScene = new float[3]{ 0f, 0f, 0f };
 			float[] rotAtNextScene = new float[3]{ 0f, 0f, 0f };
 
@@ -53,8 +54,6 @@ public class ChangeScene : MonoBehaviour, IPointerClickHandler {
 			PlayerPrefs.SetFloat ("rotationX", rotAtNextScene [0]);
 			PlayerPrefs.SetFloat ("rotationY", rotAtNextScene [1]);
 			PlayerPrefs.SetFloat ("rotationZ", rotAtNextScene [2]);
-
-//			SceneManager.LoadScene (sceneName);
 
 		} 
 

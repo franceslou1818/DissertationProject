@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+// highlighting doors in the virtual world while raycast is hovered over them
 public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	public GameObject selectedObject;
@@ -21,9 +22,6 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 		if (lookingAtObject==true) {
 			selectedObject.GetComponent<Renderer> ().material.color
 			= new Color32 ( (byte)redCol, (byte)greenCol, (byte)blueCol, (byte)alphaCol);
-
-
-
 		}
 
 	}

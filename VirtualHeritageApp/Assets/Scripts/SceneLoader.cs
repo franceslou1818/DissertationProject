@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+// load scenes. this is using fadescreen script for smooth loading
 public class SceneLoader : MonoBehaviour {
 
     private FadeScreen fadeScreen;
