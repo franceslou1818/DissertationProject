@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+// not used in this project
 public class GameMaster : MonoBehaviour {
-
 
     private SceneLoader sceneLoader;
 

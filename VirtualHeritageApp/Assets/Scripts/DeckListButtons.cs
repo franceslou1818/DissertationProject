@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
+// These are behaviours of the buttons on canvases - "select scene to explore" and "select deck to learn"
 public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler {
 
 	public Color redCol = Color.red;
@@ -18,16 +18,14 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 
 	void Awake() {
-
 		mapScript = GameObject.Find("MapScript").GetComponent<MapScript>();
 	}
-
 	void Start () {
 		this.gameObject.GetComponent<Image> ().color = normalCol;
 
 	}
-		
 
+	// when controller touchpas is clicked while the current button is clicked.
 	public void OnPointerClick(PointerEventData pointerEventData) {
 		GameObject btnClicked = this.gameObject;
 
@@ -45,15 +43,17 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 	}
 
 
+	// when a button is clicked, canvases all around change.
 	public void SetObjsActive(GameObject btnClicked) {
-
 
 		foreach (GameObject[] objArr in mapScript.allButtons) {
 
+			// changing buttons on the "select deck to learn" canvas
 			if (btnClicked==objArr[0]) {
 				mapCanvasNeeded = objArr[1];
 				objArr[1].SetActive (true);
 
+				// changing buttons/information on maps
 				if (objArr.Length != 2) {
 					GameObject buttonObj = GameObject.Find (objArr[2].name);
 					ButtonClick bc = buttonObj.GetComponent<ButtonClick>();
@@ -68,7 +68,7 @@ public class DeckListButtons : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 	}
 
-		
+	// image on buttons on canvases is changed, either an arrow or the the image representing what the button does.
 	public void swapImgToArrow(GameObject btnClicked) {
 
 		foreach (GameObject[] objArr in mapScript.allButtons) {

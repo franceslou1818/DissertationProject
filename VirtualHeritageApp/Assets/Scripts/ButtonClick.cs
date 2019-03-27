@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// These are behaviours of the buttons on maps
 public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler {
 
 	public Color redCol = Color.red;
@@ -18,8 +19,7 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
 	MapScript mapScript;
 
-
-
+	// default representation of the buttons
 	void Awake () {
 		isPointed = false;
 
@@ -36,6 +36,11 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	}
 
 
+	// buttons on each map is constantly updated depending whether or not it is selected.
+	//red = selected
+	//blue = not selected
+	//green = hovered over
+	//magenta = hovered over a selected button
 	void Update() {
 		if (isActive && isPointed) {
 			this.gameObject.GetComponent<Image> ().color = Color.magenta;
@@ -48,7 +53,7 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 		}
 	}
 
-
+	// when another button on map is clicked, the opened pop up info will be closed.
 	public void setOnlyThisActiveOrNot(bool b) {
 
 		foreach (GameObject info in mapScript.popUpInfos) {
@@ -69,7 +74,7 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 	}
 
 
-
+	// when a button on map is selected
 	public void OnPointerClick(PointerEventData pointerEventData) {
 
 		if (isActive) {
@@ -78,7 +83,8 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 			setOnlyThisActiveOrNot(true);
 		}
 
-
+		// the image on buttons on canvases will be changed, either an arrow if it is the one clicked
+		// or the actual image respresenting that button.
 		foreach (GameObject[] objArr in mapScript.allButtons) {
 			DeckListButtons buttonScript = mapScript.btnWeatherDeckMap [0].GetComponent<DeckListButtons> ();
 
@@ -98,10 +104,11 @@ public class ButtonClick : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
 	}
 
+	// when raycast from controller is hovered over
 	public void OnPointerEnter(PointerEventData pointerEventData) {
 		isPointed = true;
 	}
-
+	// when raycast from controller is not hovered over
 	public void OnPointerExit(PointerEventData pointerEventData) {
 		isPointed = false;
 	}
