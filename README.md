@@ -5,13 +5,13 @@ GitHub Repository - https://github.com/franceslou1818/DissertationProject
 This VR application project was developed using the following main tools:
 
 ### Hardaware:
-Dayream View VR
-Samsung Galaxy Note 8
+- Dayream View VR
+- Samsung Galaxy Note 8
 
 ### Software:
-Unity version 2017.4.12f1
-GoogleVR SDK 1.180.0
-C#
+- Unity version 2017.4.12f1
+- GoogleVR SDK 1.180.0
+- C#
 
 To run this on a device, a compatible phone and a daydream VR is needed
 
