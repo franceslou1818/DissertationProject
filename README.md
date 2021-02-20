@@ -4,7 +4,7 @@ GitHub Repository - https://github.com/franceslou1818/DissertationProject
 
 This VR application project was developed using the following main tools:
 
-### Hardaware:
+### Hardware:
 - Dayream View VR
 - Samsung Galaxy Note 8
 
